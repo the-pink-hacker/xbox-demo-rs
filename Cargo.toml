@@ -3,6 +3,14 @@ name = "xbox-demo-rs"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
+nxdk-rs = { git = "https://github.com/antangelo/nxdk-rs.git" }
+nxdk-sys = { git = "https://github.com/antangelo/nxdk-rs.git" }
+libc = "0.2.119"
+cstr_core = "0.2.5"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"

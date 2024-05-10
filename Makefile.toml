@@ -1,0 +1,55 @@
+[env]
+CRATE = "xbox-demo-rs"
+
+[tasks.default]
+alias = "demo"
+
+[tasks.nxdk]
+command = "make"
+args = ["${NXDK_DIR}/Makefile", "NXDK_ONLY=y"]
+dependencies = ["nxdk-activate"]
+
+[tasks.nxdk-activate]
+command = "${NXDK_DIR}/bin/activate"
+
+[tasks.demo]
+dependencies = ["nxdk", "cargo", "bin", "cxbe", "output", "generate-iso"]
+
+[tasks.cargo]
+command = "cargo"
+args = ["build", "--release"]
+
+[tasks.bin]
+command = "mkdir"
+args = ["-p", "bin"]
+
+[tasks.output]
+command = "mkdir"
+args = ["-p", "output"]
+
+[tasks.cxbe]
+command = "${NXDK_DIR}/tools/cxbe/cxbe"
+args = [
+    "target/i386-xbox-win32/release/${CRATE}.exe",
+    "-OUT:bin/default.xbe",
+    "-TITLE:${CRATE}",
+]
+
+[tasks.generate-iso]
+command = "xdvdfs"
+args = ["pack", "bin", "output/${CRATE}.iso"]
+
+[tasks.clean]
+dependencies = ["clean-cargo", "clean-bin", "clean-output"]
+
+[tasks.clean-cargo]
+command = "cargo"
+args = ["clean"]
+
+[tasks.clean-bin]
+command = "rm"
+args = ["-rf", "bin"]
+
+[tasks.clean-output]
+command = "rm"
+args = ["-rf", "output"]
