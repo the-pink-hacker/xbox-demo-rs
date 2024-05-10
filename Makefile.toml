@@ -7,10 +7,6 @@ alias = "demo"
 [tasks.nxdk]
 command = "make"
 args = ["${NXDK_DIR}/Makefile", "NXDK_ONLY=y"]
-dependencies = ["nxdk-activate"]
-
-[tasks.nxdk-activate]
-command = "${NXDK_DIR}/bin/activate"
 
 [tasks.demo]
 dependencies = ["nxdk", "cargo", "bin", "cxbe", "output", "generate-iso"]
