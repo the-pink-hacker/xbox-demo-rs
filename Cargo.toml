@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-nxdk-rs = { git = "https://github.com/antangelo/nxdk-rs.git" }
+nxdk-rs = { git = "https://github.com/antangelo/nxdk-rs.git", rev = "566195ffd6784621efa7dcf1711aed00c914b8c6" }
 
 [profile.dev]
 panic = "abort"

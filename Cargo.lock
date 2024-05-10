@@ -183,7 +183,7 @@ dependencies = [
 [[package]]
 name = "nxdk-rs"
 version = "0.1.0"
-source = "git+https://github.com/antangelo/nxdk-rs.git#566195ffd6784621efa7dcf1711aed00c914b8c6"
+source = "git+https://github.com/antangelo/nxdk-rs.git?rev=566195ffd6784621efa7dcf1711aed00c914b8c6#566195ffd6784621efa7dcf1711aed00c914b8c6"
 dependencies = [
  "cstr_core",
  "libc",
@@ -193,7 +193,7 @@ dependencies = [
 [[package]]
 name = "nxdk-sys"
 version = "0.1.0"
-source = "git+https://github.com/antangelo/nxdk-rs.git#566195ffd6784621efa7dcf1711aed00c914b8c6"
+source = "git+https://github.com/antangelo/nxdk-rs.git?rev=566195ffd6784621efa7dcf1711aed00c914b8c6#566195ffd6784621efa7dcf1711aed00c914b8c6"
 dependencies = [
  "bindgen",
  "libc",
